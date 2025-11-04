@@ -1,0 +1,59 @@
+/* src/components/layout.css */
+
+/* Base resets (kept minimal) */
+.app-shell { display:flex; flex-direction:column; height:100vh; background:#f5f7fb; color:#222; }
+
+/* NAVBAR */
+.navbar {
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  background:linear-gradient(90deg,#2f6df6,#7b59ff);
+  color:#fff;
+  box-shadow:0 2px 6px rgba(20,20,30,0.08);
+  gap:12px;
+}
+.navbar .brand { font-weight:700; font-size:18px; cursor:pointer; }
+.navbar .brand-sub { font-size:12px; opacity:0.9; margin-left:10px; color:rgba(255,255,255,0.85); }
+.navbar-left { display:flex; align-items:center; gap:8px; }
+
+/* RIGHT */
+.navbar-right { display:flex; align-items:center; gap:12px; }
+.user-info { text-align:right; margin-right:8px; }
+.user-name { font-weight:600; }
+.user-role { font-size:12px; opacity:0.9; }
+
+/* BUTTON */
+.btn-ghost {
+  background:transparent; border:1px solid rgba(255,255,255,0.2);
+  color:white;padding:6px 10px;border-radius:6px;cursor:pointer;font-weight:600;
+}
+.btn-ghost:hover { background:rgba(255,255,255,0.06); }
+
+/* MAIN AREA (sidebar + content) */
+.main-area { display:flex; flex:1; height:calc(100vh - 64px); overflow:hidden; }
+
+/* SIDEBAR */
+.sidebar {
+  width:220px; background:#fff; border-right:1px solid #e6e9ef; padding:18px 8px; box-shadow: 2px 0 6px rgba(20,20,30,0.02);
+}
+.sidebar nav { display:flex; flex-direction:column; gap:8px; }
+.side-link {
+  display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:8px; text-decoration:none; color:#333;
+  font-weight:600; font-size:14px;
+}
+.side-link .emoji { width:26px; text-align:center; }
+.side-link:hover { background:#f1f5ff; }
+.side-link.active { background:linear-gradient(90deg,#eef1ff,#f8f9ff); color:#2f6df6; box-shadow:inset 0 0 0 1px rgba(47,109,246,0.06); }
+
+/* CONTENT */
+.content-area { flex:1; overflow:auto; padding:24px; }
+
+/* Responsive: collapse sidebar on small screens */
+@media (max-width:768px) {
+  .sidebar { display:none; }
+  .content-area { padding:12px; }
+  .navbar .brand-sub { display:none; }
+}
