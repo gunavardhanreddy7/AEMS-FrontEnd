@@ -1,0 +1,118 @@
+/* Login.css - enhanced UI for Login.jsx */
+:root{
+  --bg: #f6f9fc;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --shadow: 0 10px 30px rgba(20,23,30,0.06);
+  --radius: 12px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.le-login-root{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg,#f0f6ff 0%, var(--bg) 100%);
+  padding: 28px;
+}
+
+.le-card{
+  width: 100%;
+  max-width: 440px;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(15,23,42,0.04);
+}
+
+.le-header{
+  display:flex;
+  gap: 14px;
+  align-items:center;
+  margin-bottom: 14px;
+}
+
+.le-badge{
+  width:54px;
+  height:54px;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  color:white;
+  font-weight:700;
+  font-size:18px;
+  background: linear-gradient(135deg,#4f46e5,#06b6d4);
+  box-shadow: 0 8px 20px rgba(79,70,229,0.12);
+}
+
+.le-heading{ margin:0; font-size:18px; }
+.le-sub{ margin:4px 0 0; color:var(--muted); font-size:13px; }
+
+.le-error{
+  background: #fff7f8;
+  border-left: 4px solid #ef4444;
+  color: #6b0f0f;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.le-form{ display:flex; flex-direction:column; gap:12px; margin-top:6px; }
+
+.le-field{ display:flex; flex-direction:column; gap:8px; }
+.le-label{ font-size:13px; color:var(--muted); }
+
+.le-input{
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(15,23,42,0.06);
+  background: #fff;
+  font-size:14px;
+  outline:none;
+  transition: box-shadow .12s, border-color .12s;
+  width:100%;
+}
+.le-input:focus{
+  box-shadow: 0 8px 20px rgba(37,99,235,0.06);
+  border-color: rgba(37,99,235,0.2);
+}
+
+.le-password-wrap{ position:relative; display:flex; align-items:center; }
+.le-toggle{
+  position:absolute;
+  right:8px;
+  top:50%;
+  transform:translateY(-50%);
+  background:transparent;
+  border:none;
+  color:var(--accent);
+  cursor:pointer;
+  font-weight:600;
+  padding:6px;
+  border-radius:6px;
+}
+
+.le-submit{
+  margin-top:4px;
+  padding: 12px 14px;
+  background: linear-gradient(90deg,var(--accent),#7c3aed);
+  color:white;
+  border:none;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.12);
+}
+.le-submit:disabled{ opacity:0.65; cursor:not-allowed; }
+
+.le-footer{ margin-top:12px; display:flex; justify-content:flex-end; }
+.le-link{ color:var(--accent); text-decoration:none; font-size:13px; }
+
+@media (max-width:480px){
+  .le-card{ padding:18px; border-radius:10px; }
+  .le-badge{ width:48px; height:48px; font-size:16px; }
+}
